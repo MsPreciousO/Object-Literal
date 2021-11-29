@@ -52,6 +52,9 @@
 // console.log (owner.name)
 // console.log(computer)
 
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  1
 //  Create an object named pizza.
@@ -65,14 +68,14 @@
 //  Use console.log() to print the keys variable. it should show all the object's properties
 
 
-const pizza = {
-    toppings: ['pineapple', 'spinach', 'chicken'],
-    crust: 'thincrust',
-    serves: 4,
-    makePizza: function (){
-     return `${this.toppings[0]} ${pizza.toppings[1]} ${this.toppings[2]}`,
-    }
-}
+// const pizza = {
+//     toppings: ['pineapple', 'spinach', 'chicken'],
+//     crust: 'thincrust',
+//     serves: 4,
+//     makePizza: function (){
+//      return `${this.toppings[0]} ${pizza.toppings[1]} ${this.toppings[2]}`
+//     }
+// }
 //-------------------------------- OR ---------------------------------
 // console.log(pizza.makePizza());
 
@@ -130,8 +133,7 @@ const pizza = {
 // const book = {
 //     title: 'The Life and Dreams of Precious',
 //     author: 'Amazing One',
-//     publish_year: 2030,
-    
+//     publish_year: 2030   
 // }
 
 
@@ -148,10 +150,13 @@ const pizza = {
 // const book = {
 //     title: 'The Life and Dreams of Precious',
 //     author: 'Amazing One',
-//     publish_year: 2030, };
-//  for (const property in book) {
-//     console.log(`${property}: ${book[property]}`)
-// }
+//     publish_year: 2030
+// };
+//  for (const property in book){
+//      console.log(`${property}: ${book[property]}`)
+//  }
+
+
 
 
 
@@ -167,7 +172,7 @@ const pizza = {
 // const product = {
 //     name: 'ONiel',
 //     inventory: 278,
-//     unit_price: 45.99,
+//     unit_price: 45.99
 // };
 // for (const property in product) {
 //     console.log(`${property}: ${product[property]}`)
@@ -176,28 +181,31 @@ const pizza = {
 
 
 
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 6
 // This is a continuation of exercise 5
 // 1. Create a function named addInventory(). 
-// 2.The function should accept 2 parameters -- the product object, and the number to add to the inventory. 
-// The function adjusts the product object's inventory property by adding the number passed into the function. 
+// 2.The function should accept 2 parameters -- the product object, and the number to add to the inventory. (--- adding 2 arguments)
+// The function adjusts the product object's inventory property by adding the number passed into the function. (--- assign a new variable should hold he current inventory... ie... let newInventory )
 // // For example, if the inventory of the product is currently 2, calling addInventory(product, 3) will set the value of inventory to 5
 // 3 Add a console.log() message to the function that includes a message that looks something like this:
 // "3 shoes added to the inventory"
 // In this example, "shoe" is the name of the product.
+// 
 
 // const product = {
-//     name: 'ONiel',
-//     inventory: 278,
-//     unit_price: 45.99,
+//     name: 'shoe',
+//     inventory: 2,
+//     unit_price: 399.99
 // };
-// for (const property in product) {
-//     console.log(`${property}: ${product[property]}`);
 //     function addInventory(prodObject, num) {
-//         return prodObject + 3;
+//         let newInventory = prodObject.inventory + num;
+//         console.log(`${num} shoes added to the inventory, therefore new Inventory for shoe is now ${newInventory}`)
 //     }
-// }
+//     addInventory(product,3)
+
 
 
 
@@ -213,9 +221,18 @@ const pizza = {
 // "2 chairs sold"
 // In this example, "chair" is the name of the product.
 
-// function processSale ()
-
-
+    const product = {
+        name: 'chairs',
+        inventory: 5,
+        unit_price: 10.00
+    };
+    function processSale (prodObject, num) {
+        let updatedInventory = prodObject.inventory - num;
+        console.log(`Current inventory minus ${num} chairs is ${updatedInventory}`);
+        let totalSales = prodObject.unit_price * num;
+         return `${num} chairs sold for ${totalSales}` 
+}
+processSale(product, 2)
 
 
 
@@ -232,17 +249,42 @@ const pizza = {
 // -- inventory
 // -- unit_price
 //  3. Create a function named listProducts(). The function should accept 1 parameter -- the array of products.
-// // It should return an array of just the names of the products.
+// // It should return an array of just the names of the products. [----- stored in an array----]
 
 //  4. Call the listProducts() function and log the returned value to the console.
 // console.log(listProducts(products));
 
 // // 5. Create a function names totalValue(). The function should accept 1 parameter -- the array of products.
 // // It should return the total value of all of the products in the array.
-// // You calculate the value of one product by multiplying the inventory value by the unit_price value
+// // You calculate the value of one product by multiplying the inventory value by the unit_price value (---- total is being stored in a string-------)
 
 // 6. Call the totalValue() function and log the returned value to the console.
 
-// const products = {
+// let products = [];
+// const newProd = {
+//     name: 'brush',
+//     inventory: 125,
+//     unit_price: 12.59
+// }
+// const oldProd = {
+//     name: 'comb',
+//     inventory: 96,
+//     unit_price: 6.75
+// }
+
+// products.push(newProd, oldProd);
+// // console.log(products)
+// function listProducts(para){
+//     let prod1 = para[0].name;
+//     let prod2 = para[1].name;
+//     let arrprod = [];
+//     arrprod.push(prod1, prod2);
+// return arrprod
+// }
+// function totalValue(meter){
+//     let total1 = meter[0].inventory* meter[0].unit_price;
+//     let total2 = meter[1].inventory* meter[1].unit_price;
+//     let totalSum = total1 + total2
+//     return totalSum 
 
 // }
